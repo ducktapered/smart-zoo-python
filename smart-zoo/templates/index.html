@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Zoo! - Python Version</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div class="top-controls">
+        <button id="btn-setting" class="icon-btn">⚙️</button>
+        <button id="btn-exit" class="icon-btn">❌</button>
+    </div>
+
+    <section id="screen-main-menu" class="screen active">
+        <div class="menu-content">
+            <h1 class="game-title">Smart Zoo! 🐍</h1>
+            <button id="btn-play" class="btn-main">MAIN</button>
+        </div>
+    </section>
+
+    <section id="screen-game" class="screen">
+        <div class="game-header">
+            <div id="timer" class="timer-badge">Waktu: 20s</div>
+        </div>
+        <div class="question-container">
+            <p id="question-text">Memuat dari server Python...</p>
+            <button id="btn-tts-replay" class="tts-btn">🔊 Baca Ulang</button>
+        </div>
+        <div id="options-container" class="options-grid"></div>
+    </section>
+
+    <section id="screen-reward" class="screen">
+        <h2 class="pujian-text">HEBAT! KAMU BENAR! 🎉</h2>
+        <div class="video-container">
+            <video id="reward-video" loop muted playsinline><source src="" type="video/mp4"></video>
+            <audio id="reward-audio"></audio>
+        </div>
+        <div class="reward-controls">
+            <button id="btn-reward-menu" class="btn-secondary">Ke Menu</button>
+            <button id="btn-reward-next" class="btn-primary">Lanjut ➡️</button>
+        </div>
+    </section>
+
+    <div id="modal-setting" class="modal">
+        <div class="modal-content">
+            <h3>Pengaturan Game 🛠️</h3>
+            <div class="setting-item">
+                <label for="volume-control">Volume Suara:</label>
+                <input type="range" id="volume-control" min="0" max="100" value="80">
+            </div>
+            <div class="setting-item">
+                <label for="options-count">Jumlah Pilihan Gambar:</label>
+                <select id="options-count">
+                    <option value="2">2 Gambar</option>
+                    <option value="3">3 Gambar</option>
+                    <option value="4" selected>4 Gambar</option>
+                </select>
+            </div>
+            <button id="btn-close-setting" class="btn-primary">Simpan</button>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
